@@ -3,7 +3,11 @@ from subprocess import call
 print("""
 ============================================================================================    
                                       NOKIA
-============================================================================================""")
+============================================================================================
+
+                                     IPHONE XS MAX """)
+
+
 def phone_book():
     return """
     =====================================
@@ -67,7 +71,8 @@ def set():
     =================================
             1. Message centre number
             2. Messages sent as       
-            3. Message validity"""
+            3. Message validity
+            """
 
 
 def Common():
@@ -77,7 +82,8 @@ def Common():
     =============================
     1. Delivery reports
     2. Reply via same centre
-    3 . Character support"""
+    3 . Character support
+    """
 
 
 def chat():
@@ -118,8 +124,8 @@ def Show_call_costs():
     ===============================
             1. Last call cost
             2. All calls’ cost
-            3. Clear counters
-"""
+            3. Clear counters 
+            """
 
 
 def Call_cost_settings():
@@ -144,19 +150,20 @@ def Tones():
                 5. Message alert tone
                 6. Keypad tones
                 7. Warning and game tones
-                8. Vibrating alert"""
+                8. Vibrating alert
+                """
 
 
 def Settings():
     return """
     ============================
-            Setting
+            Settings
     ============================
             1. Call settings
             2. Phone settings
             3. Security settings
             4. Restore factory settings
-"""
+            """
 
 
 def Call_settings():
@@ -169,7 +176,8 @@ def Call_settings():
                 3. Call waiting options
                 4. Own number sending
                 5. Phone line in use
-                6. Automatic answer 1"""
+                6. Automatic answer 1
+                """
 
 
 def Phone_settings():
@@ -178,7 +186,8 @@ def Phone_settings():
                 3. Welcome note
                 4. Network selection
                  5. Lights2
-                6. Confirm SIM service actions"""
+                6. Confirm SIM service actions
+                """
 
 
 def Security_settings():
@@ -200,7 +209,8 @@ def Call_divert():
     ==================================
             Call divert
     =================================
-             call divert """
+             call divert 
+             """
 
 
 def Games():
@@ -228,7 +238,7 @@ def Reminders():
             Reminder
     =========================
             Reminder
-    """
+            """
 
 
 def Clock():
@@ -241,7 +251,8 @@ def Clock():
                 3. Date setting
                 4. Stopwatch 
                 5. Countdown timer   
-                6. Auto update of date and time"""
+                6. Auto update of date and time
+                """
 
 
 def Profiles():
@@ -291,15 +302,13 @@ while True:
     if user_entry == 1:
         print(phone_book())
         user_entry = int(input("Enter 8 for option or 0 to go back:"))
-        if user_entry == 0:
-            print(menu(user))
-        elif user_entry == 0:
-            print(phone_book())
-        elif user_entry == 8:
-            print(options())
+    if user_entry == 0:
+        print(phone_book())
+    elif user_entry == 8:
+        print(options())
         user_entry = int(input("Enter 0 to go back:"))
-        if user_entry == 0:
-            print(menu(user))
+    if user_entry == 0:
+        print(menu(user))
 
 
     elif user_entry == 2:
@@ -368,26 +377,23 @@ while True:
 
     elif user_entry == 6:
         print(Settings())
-        user_entry = int(input(f"""  
-                             Enter 1 for Call settings: 
-                             Enter 2 for Phone settings: 
-                             Enter 3 for Security settings: 
-                             Enter 0 to go back: """))
-
-        if user_entry == 0:
-            print(menu(user))
-        elif user_entry == 1:
+        user_entry = int(input("Enter 0 to go back: "))
+        if user_entry == 1:
             print(Call_settings())
             user_entry = int(input("Enter 0 to go back: "))
-            if user_entry == 0:
-                print(Settings())
-        elif user == 2:
+            print(Settings())
+        elif user_entry == 0:
+            print(Settings())
+            user_entry = int(input("Enter 0 to go back: "))
+        if user_entry == 2:
             print(Phone_settings())
+        elif user_entry == 3:
+            print(Security_settings())
             user_entry = int(input("Enter 0 to go back: "))
             if user_entry == 0:
                 print(Settings())
-        elif user == 3:
-            print(Security_settings())
+        elif user_entry == 4:
+            print("Restore factory settings")
             user_entry = int(input("Enter 0 to go back: "))
             if user_entry == 0:
                 print(Settings())
