@@ -23,13 +23,13 @@
 # # print(total)
 
 numbers = [10, 20, 30, 40, 50]
-square = []
+squares = []
 total = 0
 
 for x in numbers:
     square = x ** 2
-    square.append(square)
+    squares.append(square)
     total += square
 
-print("Squared numbers:", square)
+print("Squared numbers:", squares)
 print("Sum of squared numbers:", total)
