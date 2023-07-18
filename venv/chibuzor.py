@@ -26,15 +26,15 @@
 #
 #
 # multiples of 4
-number = 1
-while number <= 256:
-    number = number * 4
-    print(number, end=' ')
+# number = 1
+# while number <= 256:
+#     number = number * 4
+#     print(number, end=' ')
 
 #
 #
-# # multiples of 8
-# number = 1
-# while number <= 5000:
-#     number = number * 8
-#     print(number, end=' ')
+# multiples of 8
+number = 1
+while number <= 5000:
+    number = number * 8
+    print(number, end=' ')
