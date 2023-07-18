@@ -10,4 +10,4 @@ def divide_or_square(num):
         return num % 5
 
 
-print(divide_or_square(num))67
+print(divide_or_square(num))
