@@ -10,4 +10,11 @@ class SimpleCalculatorTest {
         assertEquals(10, calculator.add(5,5));
     }
 
+    @Test
+    void sixMultiplyEightEqualsFortyEight(){
+        var calculator = new SimpleCalculator();
+        assertTrue(true);
+        assertEquals(48,32, calculator.multiply(6, 8));
+
+    }
 }
