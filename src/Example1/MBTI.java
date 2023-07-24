@@ -6,7 +6,7 @@ public class MBTI {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String[] questions = {
+        String[] questions = new String[]{
                 "1. At a party, do you:\nA. Interact with many, including strangers\nB. Interact with a few, known to you\n\n",
                 "2. Are you more:\nA. Realistic than speculative\nB. Speculative than realistic\n\n",
                 "3. Is it worse to:\nA. Have your head in the clouds\nB. Be too grounded in reality\n\n",
