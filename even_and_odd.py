@@ -17,4 +17,5 @@ def test2(n):
     return n ** 2
 
 
-print(list(map(test2, x1)))
+
+print

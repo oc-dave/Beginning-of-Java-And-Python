@@ -209,7 +209,7 @@ def Call_divert():
     ==================================
             Call divert
     =================================
-             call divert 
+           1.  call divert 
              """
 
 
@@ -272,7 +272,8 @@ def SIM_services():
 
 
 def menu(user):
-    print(f"""  
+    print(
+        """  
                 ===================================================                
                                       MENU
                 ===================================================                
@@ -288,7 +289,8 @@ def menu(user):
                             (10) Reminder    
                             (11) Clock        
                             (12) Profile
-                            (13) SIM services """)
+                            (13) SIM services """
+    )
 
 
 counter = 0
@@ -327,16 +329,16 @@ while True:
             if user_entry == 0:
                 print(Message_settings())
                 user_entry = int(input("Enter 0 go back: "))
-                if user_entry == 0:
-                    print(Messages())
+            if user_entry == 0:
+                print(Messages())
         elif user_entry == 2:
             print(Common())
             user_entry = int(input("Enter 0 to go back: "))
             if user_entry == 0:
                 print(Message_settings())
                 user_entry = int(input("Enter 0 go back: "))
-                if user_entry == 0:
-                    print(Messages())
+            if user_entry == 0:
+                print(Messages())
 
 
     elif user_entry == 3:
@@ -371,10 +373,6 @@ while True:
     elif user_entry == 5:
         print(Tones())
         user = int(input("enter 0 to go back: "))
-        if user_entry == 0:
-            print(menu(user))
-
-
     elif user_entry == 6:
         print(Settings())
         user_entry = int(input("Enter 0 to go back: "))

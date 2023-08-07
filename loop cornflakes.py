@@ -21,7 +21,7 @@ for i in range(1, 21):
     average_score = total_score / total_students
 
 # Print the results
-print(f"""
+print("""
 *****************************************************
 School Name: {school_name}
 *****************************************************

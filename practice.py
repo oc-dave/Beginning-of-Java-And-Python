@@ -2,10 +2,10 @@ first_name = str(input("Enter your first name: "))
 last_name = str(input("Enter your last name: "))
 age = int(input("Enter your age: "))
 
-if first_name == "":
+if not first_name:
     print("You can't leave your first name blank!")
 
-elif last_name == "":
+elif not last_name:
     print("You can't leave your last name blank!")
 
 elif age < 0:
