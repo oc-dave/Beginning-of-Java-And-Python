@@ -8,19 +8,18 @@ def password_validator():
 
         if is_valid:
             return password
-        else:
-            errors = []
-            if not has_upper:
-                errors.append("Password should have at least one upper case letter. ")
-            if not has_lower:
-                errors.append("Password should have at least one lower case letter. ")
-            if not has_digit:
-                errors.append("Password should have at least one digit. ")
-            if len(password) < 8:
-                errors.append("Password should have at least 8 characters. ")
-                print("Invalid password. please fix the following errors: ")
-            for error in errors:
-                print("- " + error)
+        errors = []
+        if not has_upper:
+            errors.append("Password should have at least one upper case letter. ")
+        if not has_lower:
+            errors.append("Password should have at least one lower case letter. ")
+        if not has_digit:
+            errors.append("Password should have at least one digit. ")
+        if len(password) < 8:
+            errors.append("Password should have at least 8 characters. ")
+            print("Invalid password. please fix the following errors: ")
+        for error in errors:
+            print(f"- {error}")
 
 valid_password = password_validator()
-print("Valid password")
+print("Valid password :", valid_password)

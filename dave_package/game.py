@@ -1,9 +1,10 @@
 import random
-secret_number = random.randint(1, 20)
-tries = 10
+
+secret_number = random.randint(1, 10)
+tries = 5
 
 print("Welcome to my Guessing Game!")
-print("I'm thinking of a number between 1 and 20.")
+print("I'm thinking of a number between 1 and 10.")
 
 while tries > 0:
     print(f"You have {tries} tries left.")
@@ -12,10 +13,15 @@ while tries > 0:
     if guess == secret_number:
         print("Congratulations! You guessed the correct number.")
         break
-    elif guess != secret_number:
+    elif guess < secret_number:
+        print("Too low, try again!")
+    elif guess > secret_number:
+        print("Too high, try again!")
+    else:
         print("wrong,try again")
 
-        tries -= 1
+
+    tries -= 1
 
 if tries == 0:
     print("Sorry, you ran out of tries.")
