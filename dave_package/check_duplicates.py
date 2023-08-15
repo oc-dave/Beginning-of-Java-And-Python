@@ -1,6 +1,7 @@
 # Create a list of strings called `my_list`
 my_list = ['Python', 'Django', 'Java', 'Python', 'Ruby', 'Anaconda']
 
+
 # Define a function called `check_for_Duplicates` that takes the list as an argument
 def check_for_Duplicates(my_list):
     # Check if the list has any duplicates by comparing the length of the original list to the length of the set of the original list

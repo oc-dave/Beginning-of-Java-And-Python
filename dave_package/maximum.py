@@ -2,7 +2,7 @@ import n1 as n1
 
 
 def greater(n1, n2):
-    return n1 if n1 > n2 else n2
+    return max(n1, n2)
 
 
 def maxi(n1, n2, n3, n4):

@@ -2,8 +2,8 @@ import re
 
 
 def email_validator(email):
-    pattern = r'[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]+'
-    return bool(re.match(pattern, email))
+    if re.search(r'[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]+', Email):
+        return bool(email)
 
 
 Email = input('Enter your email addresses : ')

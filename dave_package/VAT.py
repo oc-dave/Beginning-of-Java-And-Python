@@ -9,7 +9,7 @@ def your_vat():
             else:
                 vat_amount = price * (vat / 100)
                 return price + vat_amount
-        except (ValueError, SyntaxError, NameError):
+        except (ValueError, SyntaxError, NameError, TypeError, ZeroDivisionError):
             print("Please enter a valid number")
 
 
