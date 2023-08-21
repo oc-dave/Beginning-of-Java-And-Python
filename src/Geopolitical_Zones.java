@@ -53,12 +53,14 @@ enum SOUTH_SOUTH {
 }
 public class Geopolitical_Zones {
     public static void main(String[] args) {
-        for (SOUTH_SOUTH var_1 : SOUTH_SOUTH.values()) {
-            System.out.println(var_1);
+        for (SOUTH_SOUTH southSouth : SOUTH_SOUTH.values()) {
+            System.out.println(southSouth);
+            System.out.printf("\n");
         }
-        for (NORTH_WEST var_2 : NORTH_WEST.values()) {
 
+//        for (NORTH_WEST northWest : NORTH_WEST.values()) {
+//            System.out.println(northWest);
         }
     }
-}
+
 
