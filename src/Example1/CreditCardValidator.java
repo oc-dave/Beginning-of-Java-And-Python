@@ -12,7 +12,7 @@ public class CreditCardValidator {
 
         for (int i = cardNumber.length() - 1; i >= 0; i--) {
             int digit = Integer.parseInt(String.valueOf(cardNumber.charAt(i)));
-            if (odd = !odd) digit *= 2;
+            if (odd == !odd) digit *= 2;
             if (digit > 9) digit -= 9;
             sum += digit;
         }
