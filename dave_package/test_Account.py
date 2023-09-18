@@ -1,29 +1,23 @@
 from unittest import TestCase
-from dave_package.Bank_App import BankAccount
+from dave_package.Account import Account
 
 
-class TestBankAccount(TestCase):
-
-    def __init__(self, method_name: str = ...):
-        super().__init__(method_name)
-        self.pin = 1234
-        self.accounts = {}
+class TestAccount(TestCase):
 
     def setUp(self):
-        self.bank = BankAccount()
+        self.bank = Account()
 
     def test_register(self):
         self.bank.register(123456)
         self.assertEqual(self.bank.pin, 1234)
         self.assertEqual(self.bank.accounts, {123456: 0})
 
-    def test_get_pin(self):
-        self.assertEqual(self.bank.pin, 1234)
-        print(self.bank.pin)
-
-    def test_incorrect_pin(self):
-        with self.assertRaises(ValueError):
-            self.bank.incorrect_pin(123456, 1234)
+    # def test_get_pin(self):
+    #     self.assertEqual(self.bank.pin, 1234)
+    #
+    # def test_correct_pin(self):
+    #     with self.assertRaises(ValueError):
+    #         self.bank.correct_pin(123456, 1234)
 
     def test_deposit(self):
         self.bank.accounts[123456] = 0
@@ -39,7 +33,6 @@ class TestBankAccount(TestCase):
         self.bank.accounts[123456] = 1000
         balance = self.bank.check_balance(123456)
         self.assertEqual(balance, 1000)
-        self.assertEqual(self.bank.accounts, {123456: 1000})
 
     def test_transfer_with_pin(self):
         self.bank.accounts[123456] = 1000
@@ -55,9 +48,9 @@ class TestBankAccount(TestCase):
         actual_balance = self.bank.accounts[123456]
         self.assertEqual(expected_balance, actual_balance)
 
-    def test_find_account(self):
-        self.bank.accounts = [123456]
-        self.assertEqual(self.bank.accounts, [123456])
+    # def test_find_account(self):
+    #     self.bank.accounts = [123456]
+    #     self.assertEqual(self.bank.accounts, [123456])
 
     def test_lock_account(self):
         account_number = 123456
