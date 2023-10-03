@@ -2,35 +2,54 @@ class Account:
     def __init__(self):
         self.pin = None
         self.balance = 0
-        self.name = None
+        self.name = not None
+        self.is_locked = False
 
     def set_pin(self):
-        self.pin = input("Enter a 4-digit PIN: ")
-        while not self.pin.isdigit() or len(self.pin) != 4:
-            print("PIN must be a 4-digit number.")
-            self.pin = input("Enter a 4-digit PIN: ")
-        print("PIN set successfully")
+        while True:
+            self.pin = input("Set a 4-digit PIN for your account: ")
+            if self.pin.isdigit() and len(self.pin) == 4:
+                print("PIN set successfully.")
+                break
+            else:
+                print("PIN must be a 4-digit number.")
 
     def get_name(self):
-        self.name = input("Enter your name: ")
-        while self.name == "" or self.name.isdigit():
-            print("Please enter a valid name.")
+        while True:
             self.name = input("Enter your name: ")
-        print(self.name)
+            if self.name is not self.name.isdigit():
+                print(f"Welcome, {self.name}!")
+                break
+            else:
+                print("Please enter a valid name.")
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            print(f"Deposit of ${amount:.2f} successful.")
+            self.display_balance()
+        else:
+            print("Invalid deposit amount. Amount must be greater than zero.")
 
     def check_pin(self, pin):
         return self.pin == pin
 
-    def deposit(self, amount):
-        self.balance += amount
-        print(f"Deposit of ${amount:.2f} successful. New balance: ${self.balance:.2f}")
-
     def withdraw(self, amount):
-        if self.balance >= amount:
+        if 0 < amount <= self.balance:
             self.balance -= amount
-            print(f"Withdrawal of ${amount:.2f} successful. New balance: ${self.balance:.2f}")
+            print(f"Withdrawal of ${amount:.2f} successful.")
+            self.display_balance()
         else:
-            print("Insufficient funds")
+            print("Invalid withdrawal amount or insufficient funds.")
 
     def check_balance(self):
         return self.balance
+
+    def display_balance(self):
+        print(f"Current balance: ${self.balance:.2f}")
+
+    def lock(self):
+        self.is_locked = True
+
+    def is_account_locked(self):
+        return self.is_locked

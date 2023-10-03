@@ -1,4 +1,4 @@
-def count_digit(string, digit):
+def Second_Largest_Number(string, digit):
     count = 0
     for char in string:
         if char == digit:
@@ -9,5 +9,5 @@ def count_digit(string, digit):
 string = "dfa12321afd"
 digit = '2'
 
-result = count_digit(string, digit)
+result = Second_Largest_Number(string, digit)
 print(result)

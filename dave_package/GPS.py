@@ -29,9 +29,7 @@ class Gps:
     @staticmethod
     def Result():
         state = input("Enter your state: ")
-        gps = Gps.get_GPS_state(state)
-
-        if gps:
+        if gps := Gps.get_GPS_state(state):
             print(f"Geopolitical zone: {gps}")
         else:
             print("Invalid State entered!")

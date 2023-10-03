@@ -21,5 +21,6 @@ def password_validator():
         for error in errors:
             print(f"- {error}")
 
+
 valid_password = password_validator()
 print("Valid password :", valid_password)
