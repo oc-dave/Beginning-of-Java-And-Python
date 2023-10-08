@@ -49,7 +49,7 @@ class Bank:
     def check_account_balance(self, account_number):
         if account := self.get_account(account_number):
             balance = account.check_balance()
-            print(f"Account {account_number} balance: ${balance:.2f}")
+            print(f"Account Number: {account_number}, balance: ${balance:.2f}")
         else:
             print("Account not found.")
 
@@ -67,6 +67,13 @@ class Bank:
             print(f"Account {account_number} locked successfully.")
         else:
             print("Account not found.")
+
+    def unlock_account(self, account_number):
+        if account := self.get_account(account_number):
+            account.unlock()
+            print(f"Account {account_number} unlocked successfully.")
+        else:
+            print("Account not found")
 
     def add_account_number(self, to_account_number):
         if to_account_number not in self.accounts:

@@ -18,7 +18,8 @@ def main():
         print("5. Check account balance")
         print("6. Check account details")
         print("7. Lock account")
-        print("8. Exit")
+        print("8. Unlock account ")
+        print("9. Exit")
 
         choice = input("Please enter your choice (1-8): ")
 
@@ -71,11 +72,14 @@ def main():
                 print("Account not found. Please create an account first.")
 
         elif choice == "8":
-            print("Thank you for using the Bank. Goodbye!")
-            break
+            if account_number:
+                bank.unlock_account(account_number)
+            else:
+                print("Account not found. Please create an account first.")
 
-        else:
-            print("Invalid choice. Please try again.")
+        elif choice == "9":
+            print("Thanks for using my bank.....Goodbye.")
+            break
 
 
 if __name__ == "__main__":

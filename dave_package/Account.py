@@ -2,7 +2,7 @@ class Account:
     def __init__(self):
         self.pin = None
         self.balance = 0
-        self.name = not None
+        self.name = None
         self.is_locked = False
 
     def set_pin(self):
@@ -16,20 +16,27 @@ class Account:
 
     def get_name(self):
         while True:
-            self.name = input("Enter your name: ")
-            if self.name is not self.name.isdigit():
-                print(f"Welcome, {self.name}!")
-                break
-            else:
-                print("Please enter a valid name.")
+            try:
+                self.name = input("Enter your name: ")
+                if not self.name.isdigit():
+                    print(f"Welcome, {self.name}!")
+                    break
+                else:
+                    print("Please enter a valid name without digits.")
+            except (ValueError, SyntaxError, TypeError):
+                print("PLease enter a Valid name")
 
     def deposit(self, amount):
-        if amount > 0:
-            self.balance += amount
-            print(f"Deposit of ${amount:.2f} successful.")
-            self.display_balance()
-        else:
-            print("Invalid deposit amount. Amount must be greater than zero.")
+        try:
+            amount = int(amount)
+            if amount > 0:
+                self.balance += amount
+                print(f"Deposit of ${amount:.2f} successful.")
+                self.display_balance()
+            else:
+                print("Invalid deposit amount. Amount must be greater than zero.")
+        except (ValueError, SyntaxError, TypeError):
+            print("Please enter a valid numeric amount.")
 
     def check_pin(self, pin):
         return self.pin == pin
@@ -51,5 +58,10 @@ class Account:
     def lock(self):
         self.is_locked = True
 
+    def unlock(self):
+        self.is_locked = False
+
     def is_account_locked(self):
         return self.is_locked
+
+
