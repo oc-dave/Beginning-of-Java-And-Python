@@ -1,9 +1,6 @@
 def find_first_digit(string):
     for i, char in enumerate(string):
-        if char.isdigit():
-            return i
-        else:
-            return -1
+        return i if char.isdigit() else -1
 
 
 input_string = "abcd1111"

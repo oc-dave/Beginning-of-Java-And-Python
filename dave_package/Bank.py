@@ -7,7 +7,7 @@ class Bank:
         self.accounts = {}
 
     def create_account(self):
-        account_number = random.randint(3000000000, 9000000000)
+        account_number = random.randint(0000000000, 3000000000)
         account = Account()
         account.set_pin()
         account.get_name()

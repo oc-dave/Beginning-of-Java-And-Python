@@ -1,7 +1,7 @@
 from dave_package.Bank import Bank
 
 
-def main():
+def main():  # sourcery skip: low-code-quality
     bank = Bank()
     account_number = None
 
